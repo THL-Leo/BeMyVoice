@@ -278,3 +278,68 @@ nav button svg {
     right: 0;
     z-index: 2;
 }
+
+#login-page-container {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100vh;
+    background-image: url(./wallpaper.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#login-page {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 10px;
+    width: 300px;
+    color: white;
+}
+
+#login-page h1 {
+    font-size: 2rem;
+    color: #FFD700;
+}
+
+.input-group {
+    margin: 15px 0;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 5px;
+}
+
+#login-button {
+    background-color: #FFD700;
+    color: white;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#loginmain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -112,6 +112,10 @@ def learn():
 def page2():
     return render_template('page2.html')
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
 def speak_text(text):
     print(f"Adding to queue: {text}")
     tts_queue.put(text)
