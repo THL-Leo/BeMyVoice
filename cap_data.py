@@ -17,7 +17,7 @@ counter = 0
 max_images = 200  # Limit of images to capture
 
 # Folder to save images
-folder = "/Users/reetvikchatterjee/Desktop/Dataset/ILoveYou"
+folder = "/Users/reetvikchatterjee/Desktop/Dataset/Work"
 
 # Create directory if it doesn't exist
 if not os.path.exists(folder):
