@@ -113,6 +113,7 @@
             background-color: rgba(255, 255, 255, 0.4);
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.min.js"></script>
 </head>
 
 <body>
@@ -127,6 +128,46 @@
     </div>
 
     <script>
+        const socket = io('http://127.0.0.1:5008');
+        const video = document.getElementsByClassName('video')[0];
+
+        // Access the webcam
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+            })
+            .catch(err => {
+                console.error("Error accessing the webcam: ", err);
+            });
+
+        // Capture frames and send to server every second
+        setInterval(() => {
+            captureFrame();
+        }, 1000);  // Adjust the interval as needed
+
+        function captureFrame() {
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            const context = canvas.getContext('2d');
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            const frameData = canvas.toDataURL('image/jpeg');
+            socket.emit('image', frameData);  // Send frame to Flask server
+        }
+        socket.on('response', data => {
+            console.log(data.prediction, data.confidence);
+        });
+        // Handle response from Flask server
+        socket.on('chatgpt_response', data => {
+            console.log(data.response);
+            const textView = document.querySelector('.text-view');
+            textView.innerHTML = `<p>${data.response}</p>`;
+        });
+
+        socket.on('error', data => {
+            console.error("Error:", data.message);
+        });
         // Access video element
         const videoElement = document.querySelector('.video');
         const textView = document.querySelector('.text-view');

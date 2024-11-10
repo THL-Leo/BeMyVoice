@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Be My Voice</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="index.css" />
+    <!-- <link rel="stylesheet" href="index.css" /> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
 </head>
 
 <body>
     <div id="loader">
         <div id="yellow1"></div>
         <div id="yellow2"></div>
-        <video autoplay loop muted src="./video.mp4"></video>
+        <!-- <video autoplay loop muted src="./video.mp4"></video> -->
+        <video autoplay loop muted src="{{ url_for('static', filename='video.mp4') }}"></video>
         <h1 id="lod">
             <b>BREAKING BARRIERS</b>
         </h1>
@@ -21,7 +23,7 @@
     <nav>
         <h1>BE MY VOICE</h1>
         <div id="but">
-            <a href="learn.html">
+            <a href="/learn">
                 <button>LEARN</button>
             </a>
             <button>
@@ -51,7 +53,7 @@
                 <h4>and</h4>
                 <h4>TEACH</h4>
             </div>
-            <a href="page2.html">
+            <a href="/camera">
                 <button class="button2">START EXPLORING</button>
             </a>
             <div id="moving-div">
@@ -87,7 +89,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
         integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
 </html>
