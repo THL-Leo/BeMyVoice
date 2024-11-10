@@ -16,13 +16,16 @@ import threading
 from queue import Queue, Empty
 import pygame
 from flask_cors import CORS
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app, origins="*")
 socketio = SocketIO(app, cors_allowed_origins="*", host="127.0.0.1", port=5008)
 
 # OpenAI client setup
-client = OpenAI(api_key="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")
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Text-to-speech setup
 tts_queue = Queue()

@@ -281,6 +281,7 @@ pyparsing==3.1.1
 pyproj==3.7.0
 pyquaternion==0.9.9
 python-dateutil==2.8.2
+python-dotenv==1.0.1
 python-engineio==4.10.1
 python-socketio==5.11.4
 pyttsx3==2.98
