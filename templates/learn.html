@@ -4,40 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn - Be My Voice</title>
+    <!-- Import custom styles first to prevent Bootstrap from overriding them -->
     <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
-    <title>Learn</title>
+    <!-- Import Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
-<body>
-    <div id="letter">
-        <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{ url_for('static', filename='img1.jpg') }}" class="bg-cover" alt="...">
+<body class="learn-page-container">
+    <nav>
+        <h1><b>BE MY VOICE</b></h1>
+        <div id="nav-bottom"></div>
+    </nav>
+
+    <div class="learn-main">
+        <div class="flashcards-container">
+            <div id="flashcard-carousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="flashcard">
+                            <img src="{{ url_for('static', filename='ILY.jpg') }}" class="bg-cover" alt="Flashcard 1">
+                            <!-- <div class="flashcard-info"> -->
+                                <!-- <h2>Flashcard 1 Title</h2> -->
+                                <!-- <p>Description of flashcard 1</p> -->
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="flashcard">
+                            <img src="{{ url_for('static', filename='wait.jpg') }}" class="bg-cover" alt="Flashcard 2">
+                            <!-- <div class="flashcard-info"> -->
+                                <!-- <h2>Flashcard 2 Title</h2> -->
+                                <!-- <p>Description of flashcard 2</p> -->
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="flashcard">
+                            <img src="{{ url_for('static', filename='img1.jpg') }}" class="bg-cover" alt="Flashcard 3">
+                            <!-- <div class="flashcard-info"> -->
+                                <!-- <h2>Flashcard 3 Title</h2> -->
+                                <!-- <p>Description of flashcard 3</p> -->
+                            <!-- </div> -->
+                        </div>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="{{ url_for('static', filename='img1.jpg') }}" class="bg-cover" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ url_for('static', filename='img1.jpg') }}" class="bg-cover" alt="...">
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#flashcard-carousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#flashcard-carousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
     </div>
 
+    <!-- Import Bootstrap JS after custom script for better control -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
 </html>

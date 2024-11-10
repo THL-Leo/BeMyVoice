@@ -343,3 +343,117 @@ nav button svg {
     justify-content: center;
     align-items: center;
 }
+
+/* Specific styles for the Learn page */
+
+.learn-page-container {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100vh;
+    background-image: url(./learn.png);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Navbar specific to the Learn page */
+.learn-nav {
+    background-color: rgba(0, 0, 0, 0.7); Semi-transparent black
+    /* color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10; */
+}
+
+/* .learn-nav h1 {
+    margin: 0;
+    color: #FFD700;
+    font-size: 2rem;
+} */
+
+.learn-page-container nav h1 {
+    font-weight: 500;
+    font-size: 1.78em;
+    color: #333;
+}
+/* 
+.flashcards-container .flashcard img {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+ */
+
+/* Main container for flashcards */
+.learn-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 0px; /* Adjusts for the fixed navbar */
+}
+
+/* Flashcards container */
+.flashcards-container {
+    width: 80%;
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay background */
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+}
+
+/* Carousel for the flashcards */
+.carousel-inner {
+    position: relative;
+}
+
+.flashcard {
+    position: relative;
+}
+
+.flashcard img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Flashcard info overlay */
+.flashcard-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.flashcard-info h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.flashcard-info p {
+    font-size: 1rem;
+}
+
+/* Custom arrows */
+.carousel-control-prev, .carousel-control-next {
+    background-color: #FFD700;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: black;
+}
+
+/* Button styles on hover */
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    background-color: #FFA500;
+}
+
