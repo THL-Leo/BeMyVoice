@@ -425,20 +425,23 @@ nav button svg {
 /* Flashcard info overlay */
 .flashcard-info {
     position: absolute;
-    top: 50%;
+    top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: rgb(32, 29, 29);
     text-align: center;
+    /* margin-top: 20px; */
 }
 
 .flashcard-info h2 {
     font-size: 2rem;
     font-weight: bold;
+    color: rgb(32, 29, 29);
 }
 
 .flashcard-info p {
     font-size: 1rem;
+    color: rgb(32, 29, 29);
 }
 
 /* Custom arrows */
