@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Check</title>
+    <style>
+        /* Gradient animation */
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        body {
+            margin: -8px !important;
+        }
+
+        /* Page container styling */
+        .app-container {
+            text-align: center;
+            background: linear-gradient(-45deg, black, black, rgb(10, 87, 10), rgb(10, 87, 10));
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        /* Title styling */
+        .title {
+            text-transform: uppercase;
+            padding: 5px 10px;
+            color: #0ba34e;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            animation: fadeInDown 2s;
+            border: 1px solid white;
+        }
+
+        /* Video styling */
+        .video {
+            width: 80%;
+            max-width: 600px;
+            border: 5px solid white;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            transition: transform 0.5s;
+        }
+
+        .video:hover {
+            transform: scale(1.05);
+        }
+
+        /* Text view styling */
+        .text-view {
+            width: 80%;
+            max-width: 600px;
+            /* Adjusted dynamically via JavaScript */
+            border: 2px solid white;
+            border-radius: 5px;
+            padding: 1rem;
+            font-size: 1rem;
+            margin-top: 1rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            overflow: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Button styling */
+        .button {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            background-color: rgb(10, 87, 10);
+            border: 2px solid white;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="app-container">
+        <h1 class="title">KNOWLEDGE CHECK</h1>
+        <video class="video" autoplay playsinline></video>
+        <div class="text-view">
+            <p>This is your text view content.</p>
+        </div>
+        <button class="button" onclick="logout()"> BACK </button>
+    </div>
+
+    <script>
+        // Access video element
+        const videoElement = document.querySelector('.video');
+        const textView = document.querySelector('.text-view');
+
+        // Access webcam stream
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                videoElement.srcObject = stream;
+
+                // Update video dimensions after metadata is loaded
+                videoElement.onloadedmetadata = () => {
+                    const videoHeight = videoElement.videoHeight;
+                    const videoWidth = videoElement.videoWidth;
+                    const displayedVideoWidth = videoElement.clientWidth;
+                    const displayedVideoHeight = (videoHeight / videoWidth) * displayedVideoWidth;
+
+                    // Set text view height to 25% of displayed video height
+                    textView.style.height = `${displayedVideoHeight * 0.25}px`;
+                };
+            })
+            .catch(err => console.error('Error accessing webcam:', err));
+
+        // Simulate logout function
+        function logout() {
+            window.location.href = '/index.html';  // Adjust this path if necessary
+        }
+    </script>
+
+</body>
+
+</html>
